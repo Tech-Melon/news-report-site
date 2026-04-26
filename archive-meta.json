@@ -326,5 +326,13 @@
     "badge": "午报",
     "slug": "2026-04-26-noon.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-04-26-evening.html",
+    "title": "2026年04月26日 🌙 晚报",
+    "date": "2026-04-26T20:13:02.691647",
+    "badge": "晚报",
+    "slug": "2026-04-26-evening.html",
+    "has_audio": true
   }
 ]
