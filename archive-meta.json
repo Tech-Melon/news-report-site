@@ -350,5 +350,13 @@
     "badge": "午报",
     "slug": "2026-04-27-noon.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-04-27-evening.html",
+    "title": "2026年04月27日 🌙 晚报",
+    "date": "2026-04-27T20:21:14.099966",
+    "badge": "晚报",
+    "slug": "2026-04-27-evening.html",
+    "has_audio": true
   }
 ]
