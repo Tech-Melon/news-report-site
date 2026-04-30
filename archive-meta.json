@@ -414,5 +414,13 @@
     "badge": "早报",
     "slug": "2026-04-30-morning.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-04-30-noon.html",
+    "title": "2026年04月30日 ☀️ 午报",
+    "date": "2026-04-30T12:13:12.660423",
+    "badge": "午报",
+    "slug": "2026-04-30-noon.html",
+    "has_audio": true
   }
 ]
