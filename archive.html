@@ -156,6 +156,14 @@ header {
   color: var(--muted);
   white-space: nowrap;
 }
+.day-block { margin-bottom: 8px; }
+.day-label {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 8px 0 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
 footer {
   text-align: center;
   color: var(--muted);
@@ -193,10 +201,12 @@ footer a { color: var(--accent); text-decoration: none; }
   <div class="container">
     <header>
       <div class="header-left">
-        <div class="logo">🍉</div>
-        <div class="header-info">
-          <h1>技术瓜新闻播报</h1>
-        </div>
+        <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
+          <div class="logo">🍉</div>
+          <div class="header-info">
+            <h1>技术瓜新闻播报</h1>
+          </div>
+        </a>
       </div>
       
 <div class="header-links">
@@ -209,13 +219,52 @@ footer a { color: var(--accent); text-decoration: none; }
 
     </header>
     
-<div style="margin-bottom:16px;font-size:13px;color:var(--muted)">共 89 篇播报</div>
-<div class="card">
-  <ul class="archive-list">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px">
+  <div style="font-size:13px;color:var(--muted)">共 89 篇播报，30 天</div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <label style="font-size:13px;color:var(--muted)">跳转到：</label>
+    <select id="date-jump" onchange="jumpToDate(this.value)"
+      style="background:var(--card);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:4px 8px;font-size:13px;cursor:pointer">
+      <option value="">选择日期...</option>
+      <option value="2026-05-13">2026年05月13日</option>
+<option value="2026-05-12">2026年05月12日</option>
+<option value="2026-05-11">2026年05月11日</option>
+<option value="2026-05-10">2026年05月10日</option>
+<option value="2026-05-09">2026年05月09日</option>
+<option value="2026-05-08">2026年05月08日</option>
+<option value="2026-05-06">2026年05月06日</option>
+<option value="2026-05-05">2026年05月05日</option>
+<option value="2026-05-04">2026年05月04日</option>
+<option value="2026-05-03">2026年05月03日</option>
+<option value="2026-05-02">2026年05月02日</option>
+<option value="2026-05-01">2026年05月01日</option>
+<option value="2026-04-30">2026年04月30日</option>
+<option value="2026-04-29">2026年04月29日</option>
+<option value="2026-04-28">2026年04月28日</option>
+<option value="2026-04-27">2026年04月27日</option>
+<option value="2026-04-26">2026年04月26日</option>
+<option value="2026-04-25">2026年04月25日</option>
+<option value="2026-04-24">2026年04月24日</option>
+<option value="2026-04-23">2026年04月23日</option>
+<option value="2026-04-22">2026年04月22日</option>
+<option value="2026-04-21">2026年04月21日</option>
+<option value="2026-04-20">2026年04月20日</option>
+<option value="2026-04-19">2026年04月19日</option>
+<option value="2026-04-18">2026年04月18日</option>
+<option value="2026-04-17">2026年04月17日</option>
+<option value="2026-04-16">2026年04月16日</option>
+<option value="2026-04-15">2026年04月15日</option>
+<option value="2026-04-14">2026年04月14日</option>
+<option value="2026-04-13">2026年04月13日</option>
+
+    </select>
+  </div>
+</div>
+<div id="archive-container"><div class="day-block" data-day="2026-05-13"><div class="day-label">2026年05月13日</div><ul class="archive-list">
 <li>
-  <a href="/archive/2026-05-13-evening.html">
-    <span>2026年05月13日 🌙 晚报</span>
-    <span class="badge">晚报</span>
+  <a href="/archive/2026-05-13-noon.html">
+    <span>2026年05月13日 ☀️ 午报 🎧</span>
+    <span class="badge">午报</span>
   </a>
 </li>
 <li>
@@ -225,15 +274,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-13-noon.html">
-    <span>2026年05月13日 ☀️ 午报 🎧</span>
-    <span class="badge">午报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-12-evening.html">
-    <span>2026年05月12日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-13-evening.html">
+    <span>2026年05月13日 🌙 晚报</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-12"><div class="day-label">2026年05月12日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-12-morning.html">
+    <span>2026年05月12日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -243,8 +293,15 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-12-morning.html">
-    <span>2026年05月12日 🌅 早报 🎧</span>
+  <a href="/archive/2026-05-12-evening.html">
+    <span>2026年05月12日 🌙 晚报 🎧</span>
+    <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-11"><div class="day-label">2026年05月11日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-11-morning.html">
+    <span>2026年05月11日 🌅 早报 🎧</span>
     <span class="badge">早报</span>
   </a>
 </li>
@@ -253,17 +310,12 @@ footer a { color: var(--accent); text-decoration: none; }
     <span>2026年05月11日 ☀️ 午报 🎧</span>
     <span class="badge">午报</span>
   </a>
-</li>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-10"><div class="day-label">2026年05月10日</div><ul class="archive-list">
 <li>
-  <a href="/archive/2026-05-11-morning.html">
-    <span>2026年05月11日 🌅 早报 🎧</span>
+  <a href="/archive/2026-05-10-morning.html">
+    <span>2026年05月10日 🌅 早报 🎧</span>
     <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-10-evening.html">
-    <span>2026年05月10日 🌙 晚报 🎧</span>
-    <span class="badge">晚报</span>
   </a>
 </li>
 <li>
@@ -273,15 +325,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-10-morning.html">
-    <span>2026年05月10日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-09-evening.html">
-    <span>2026年05月09日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-10-evening.html">
+    <span>2026年05月10日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-09"><div class="day-label">2026年05月09日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-09-morning.html">
+    <span>2026年05月09日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -291,15 +344,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-09-morning.html">
-    <span>2026年05月09日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-08-evening.html">
-    <span>2026年05月08日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-09-evening.html">
+    <span>2026年05月09日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-08"><div class="day-label">2026年05月08日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-08-morning.html">
+    <span>2026年05月08日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -309,15 +363,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-08-morning.html">
-    <span>2026年05月08日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-06-evening.html">
-    <span>2026年05月06日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-08-evening.html">
+    <span>2026年05月08日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-06"><div class="day-label">2026年05月06日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-06-morning.html">
+    <span>2026年05月06日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -327,15 +382,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-06-morning.html">
-    <span>2026年05月06日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-05-evening.html">
-    <span>2026年05月05日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-06-evening.html">
+    <span>2026年05月06日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-05"><div class="day-label">2026年05月05日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-05-morning.html">
+    <span>2026年05月05日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -345,15 +401,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-05-morning.html">
-    <span>2026年05月05日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-04-evening.html">
-    <span>2026年05月04日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-05-evening.html">
+    <span>2026年05月05日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-04"><div class="day-label">2026年05月04日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-04-morning.html">
+    <span>2026年05月04日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -363,15 +420,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-04-morning.html">
-    <span>2026年05月04日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-03-evening.html">
-    <span>2026年05月03日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-04-evening.html">
+    <span>2026年05月04日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-03"><div class="day-label">2026年05月03日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-03-morning.html">
+    <span>2026年05月03日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -381,15 +439,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-03-morning.html">
-    <span>2026年05月03日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-02-evening.html">
-    <span>2026年05月02日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-03-evening.html">
+    <span>2026年05月03日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-02"><div class="day-label">2026年05月02日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-02-morning.html">
+    <span>2026年05月02日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -399,15 +458,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-02-morning.html">
-    <span>2026年05月02日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-05-01-evening.html">
-    <span>2026年05月01日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-02-evening.html">
+    <span>2026年05月02日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-05-01"><div class="day-label">2026年05月01日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-05-01-morning.html">
+    <span>2026年05月01日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -417,15 +477,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-05-01-morning.html">
-    <span>2026年05月01日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-30-evening.html">
-    <span>2026年04月30日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-05-01-evening.html">
+    <span>2026年05月01日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-30"><div class="day-label">2026年04月30日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-30-morning.html">
+    <span>2026年04月30日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -435,15 +496,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-30-morning.html">
-    <span>2026年04月30日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-29-evening.html">
-    <span>2026年04月29日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-30-evening.html">
+    <span>2026年04月30日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-29"><div class="day-label">2026年04月29日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-29-morning.html">
+    <span>2026年04月29日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -453,15 +515,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-29-morning.html">
-    <span>2026年04月29日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-28-evening.html">
-    <span>2026年04月28日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-29-evening.html">
+    <span>2026年04月29日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-28"><div class="day-label">2026年04月28日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-28-morning.html">
+    <span>2026年04月28日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -471,15 +534,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-28-morning.html">
-    <span>2026年04月28日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-27-evening.html">
-    <span>2026年04月27日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-28-evening.html">
+    <span>2026年04月28日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-27"><div class="day-label">2026年04月27日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-27-morning.html">
+    <span>2026年04月27日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -489,15 +553,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-27-morning.html">
-    <span>2026年04月27日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-26-evening.html">
-    <span>2026年04月26日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-27-evening.html">
+    <span>2026年04月27日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-26"><div class="day-label">2026年04月26日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-26-morning.html">
+    <span>2026年04月26日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -507,15 +572,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-26-morning.html">
-    <span>2026年04月26日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-25-evening.html">
-    <span>2026年04月25日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-26-evening.html">
+    <span>2026年04月26日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-25"><div class="day-label">2026年04月25日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-25-morning.html">
+    <span>2026年04月25日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -525,15 +591,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-25-morning.html">
-    <span>2026年04月25日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-24-evening.html">
-    <span>2026年04月24日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-25-evening.html">
+    <span>2026年04月25日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-24"><div class="day-label">2026年04月24日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-24-morning.html">
+    <span>2026年04月24日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -543,15 +610,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-24-morning.html">
-    <span>2026年04月24日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-23-evening.html">
-    <span>2026年04月23日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-24-evening.html">
+    <span>2026年04月24日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-23"><div class="day-label">2026年04月23日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-23-morning.html">
+    <span>2026年04月23日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -561,15 +629,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-23-morning.html">
-    <span>2026年04月23日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-22-evening.html">
-    <span>2026年04月22日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-23-evening.html">
+    <span>2026年04月23日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-22"><div class="day-label">2026年04月22日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-22-morning.html">
+    <span>2026年04月22日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -579,15 +648,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-22-morning.html">
-    <span>2026年04月22日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-21-evening.html">
-    <span>2026年04月21日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-22-evening.html">
+    <span>2026年04月22日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-21"><div class="day-label">2026年04月21日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-21-morning.html">
+    <span>2026年04月21日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -597,15 +667,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-21-morning.html">
-    <span>2026年04月21日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-20-evening.html">
-    <span>2026年04月20日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-21-evening.html">
+    <span>2026年04月21日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-20"><div class="day-label">2026年04月20日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-20-morning.html">
+    <span>2026年04月20日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -615,15 +686,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-20-morning.html">
-    <span>2026年04月20日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-19-evening.html">
-    <span>2026年04月19日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-20-evening.html">
+    <span>2026年04月20日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-19"><div class="day-label">2026年04月19日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-19-morning.html">
+    <span>2026年04月19日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -633,15 +705,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-19-morning.html">
-    <span>2026年04月19日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-18-evening.html">
-    <span>2026年04月18日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-19-evening.html">
+    <span>2026年04月19日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-18"><div class="day-label">2026年04月18日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-18-morning.html">
+    <span>2026年04月18日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -651,15 +724,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-18-morning.html">
-    <span>2026年04月18日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-17-evening.html">
-    <span>2026年04月17日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-18-evening.html">
+    <span>2026年04月18日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-17"><div class="day-label">2026年04月17日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-17-morning.html">
+    <span>2026年04月17日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -669,15 +743,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-17-morning.html">
-    <span>2026年04月17日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-16-evening.html">
-    <span>2026年04月16日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-17-evening.html">
+    <span>2026年04月17日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-16"><div class="day-label">2026年04月16日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-16-morning.html">
+    <span>2026年04月16日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -687,15 +762,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-16-morning.html">
-    <span>2026年04月16日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-15-evening.html">
-    <span>2026年04月15日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-16-evening.html">
+    <span>2026年04月16日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-15"><div class="day-label">2026年04月15日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-15-morning.html">
+    <span>2026年04月15日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -705,15 +781,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-15-morning.html">
-    <span>2026年04月15日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-14-evening.html">
-    <span>2026年04月14日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-15-evening.html">
+    <span>2026年04月15日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-14"><div class="day-label">2026年04月14日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-14-morning.html">
+    <span>2026年04月14日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -723,15 +800,16 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-14-morning.html">
-    <span>2026年04月14日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
-  </a>
-</li>
-<li>
-  <a href="/archive/2026-04-13-evening.html">
-    <span>2026年04月13日 🌙 晚报 🎧</span>
+  <a href="/archive/2026-04-14-evening.html">
+    <span>2026年04月14日 🌙 晚报 🎧</span>
     <span class="badge">晚报</span>
+  </a>
+</li></ul></div>
+<div class="day-block" data-day="2026-04-13"><div class="day-label">2026年04月13日</div><ul class="archive-list">
+<li>
+  <a href="/archive/2026-04-13-morning.html">
+    <span>2026年04月13日 🌅 早报 🎧</span>
+    <span class="badge">早报</span>
   </a>
 </li>
 <li>
@@ -741,13 +819,63 @@ footer a { color: var(--accent); text-decoration: none; }
   </a>
 </li>
 <li>
-  <a href="/archive/2026-04-13-morning.html">
-    <span>2026年04月13日 🌅 早报 🎧</span>
-    <span class="badge">早报</span>
+  <a href="/archive/2026-04-13-evening.html">
+    <span>2026年04月13日 🌙 晚报 🎧</span>
+    <span class="badge">晚报</span>
   </a>
-</li>
-  </ul>
+</li></ul></div>
 </div>
+<div class="pagination" id="archive-pagination"></div>
+<script>
+  var PAGE_SIZE = 7;
+  var days = ["2026-05-13", "2026-05-12", "2026-05-11", "2026-05-10", "2026-05-09", "2026-05-08", "2026-05-06", "2026-05-05", "2026-05-04", "2026-05-03", "2026-05-02", "2026-05-01", "2026-04-30", "2026-04-29", "2026-04-28", "2026-04-27", "2026-04-26", "2026-04-25", "2026-04-24", "2026-04-23", "2026-04-22", "2026-04-21", "2026-04-20", "2026-04-19", "2026-04-18", "2026-04-17", "2026-04-16", "2026-04-15", "2026-04-14", "2026-04-13"];
+  var currentPage = 0;
+
+  function getPageFromHash() {
+    var h = location.hash.replace('#page-', '');
+    var n = parseInt(h);
+    return isNaN(n) ? 0 : Math.max(0, Math.min(n, Math.ceil(days.length / PAGE_SIZE) - 1));
+  }
+
+  function renderPage(page) {
+    currentPage = page;
+    var start = page * PAGE_SIZE;
+    var end = start + PAGE_SIZE;
+    var visible = days.slice(start, end);
+    document.querySelectorAll('.day-block').forEach(function(el) {
+      el.style.display = visible.includes(el.dataset.day) ? '' : 'none';
+    });
+    renderPagination();
+    window.scrollTo(0, 0);
+  }
+
+  function renderPagination() {
+    var total = Math.ceil(days.length / PAGE_SIZE);
+    var p = document.getElementById('archive-pagination');
+    var prev = currentPage > 0
+      ? '<a href="#page-' + (currentPage-1) + '" onclick="renderPage(' + (currentPage-1) + ');return false;">← 上一页</a>'
+      : '<span class="disabled">← 上一页</span>';
+    var next = currentPage < total-1
+      ? '<a href="#page-' + (currentPage+1) + '" onclick="renderPage(' + (currentPage+1) + ');return false;">下一页 →</a>'
+      : '<span class="disabled">下一页 →</span>';
+    p.innerHTML = prev + '<span style="font-size:13px;color:var(--muted)">' + (currentPage+1) + ' / ' + total + '</span>' + next;
+  }
+
+  function jumpToDate(day) {
+    if (!day) return;
+    var idx = days.indexOf(day);
+    if (idx === -1) return;
+    var page = Math.floor(idx / PAGE_SIZE);
+    renderPage(page);
+    // 页面渲染后滚动到对应天块
+    setTimeout(function() {
+      var el = document.querySelector('[data-day="' + day + '"]');
+      if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+    }, 50);
+  }
+
+  renderPage(getPageFromHash());
+</script>
     
 <footer>
   <p>
