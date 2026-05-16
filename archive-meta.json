@@ -766,5 +766,13 @@
     "badge": "早报",
     "slug": "2026-05-16-morning.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-05-16-noon.html",
+    "title": "2026年05月16日 ☀️ 午报",
+    "date": "2026-05-16T12:11:18.087422",
+    "badge": "午报",
+    "slug": "2026-05-16-noon.html",
+    "has_audio": true
   }
 ]
