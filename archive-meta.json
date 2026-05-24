@@ -966,5 +966,13 @@
     "badge": "午报",
     "slug": "2026-05-24-noon.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-05-24-evening.html",
+    "title": "2026年05月24日 🌙 晚报",
+    "date": "2026-05-24T20:14:37.882865",
+    "badge": "晚报",
+    "slug": "2026-05-24-evening.html",
+    "has_audio": true
   }
 ]
