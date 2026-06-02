@@ -1182,5 +1182,13 @@
     "badge": "午报",
     "slug": "2026-06-02-noon.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-06-02-evening.html",
+    "title": "2026年06月02日 🌙 晚报",
+    "date": "2026-06-02T20:24:04.452618",
+    "badge": "晚报",
+    "slug": "2026-06-02-evening.html",
+    "has_audio": true
   }
 ]
