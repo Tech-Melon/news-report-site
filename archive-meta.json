@@ -1414,5 +1414,13 @@
     "badge": "早报",
     "slug": "2026-06-12-morning.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-06-12-noon.html",
+    "title": "2026年06月12日 ☀️ 午报",
+    "date": "2026-06-12T12:12:00.247966",
+    "badge": "午报",
+    "slug": "2026-06-12-noon.html",
+    "has_audio": true
   }
 ]
