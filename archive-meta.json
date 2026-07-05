@@ -1966,5 +1966,13 @@
     "badge": "午报",
     "slug": "2026-07-05-noon.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-07-05-evening.html",
+    "title": "2026年07月05日 🌙 晚报",
+    "date": "2026-07-05T20:13:42.475028",
+    "badge": "晚报",
+    "slug": "2026-07-05-evening.html",
+    "has_audio": true
   }
 ]
