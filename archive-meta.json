@@ -2638,5 +2638,13 @@
     "badge": "午报",
     "slug": "2026-08-04-noon.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-08-04-evening.html",
+    "title": "2026年08月04日 🌙 晚报",
+    "date": "2026-08-04T20:11:25.057766",
+    "badge": "晚报",
+    "slug": "2026-08-04-evening.html",
+    "has_audio": true
   }
 ]
