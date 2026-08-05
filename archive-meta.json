@@ -2662,5 +2662,13 @@
     "badge": "午报",
     "slug": "2026-08-05-noon.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-08-05-evening.html",
+    "title": "2026年08月05日 🌙 晚报",
+    "date": "2026-08-05T20:11:30.344536",
+    "badge": "晚报",
+    "slug": "2026-08-05-evening.html",
+    "has_audio": true
   }
 ]
