@@ -2854,5 +2854,13 @@
     "badge": "早报",
     "slug": "2026-08-15-morning.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-08-15-noon.html",
+    "title": "2026年08月15日 ☀️ 午报",
+    "date": "2026-08-15T12:12:30.376123",
+    "badge": "午报",
+    "slug": "2026-08-15-noon.html",
+    "has_audio": true
   }
 ]
