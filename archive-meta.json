@@ -3926,5 +3926,13 @@
     "badge": "午报",
     "slug": "2026-10-01-noon.html",
     "has_audio": true
+  },
+  {
+    "url": "/archive/2026-10-01-evening.html",
+    "title": "2026年10月01日 🌙 晚报",
+    "date": "2026-10-01T20:11:44.245403",
+    "badge": "晚报",
+    "slug": "2026-10-01-evening.html",
+    "has_audio": true
   }
 ]
