@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技术瓜新闻午报 · 2026年10月18日</title>
+  <style>
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e2e8f0;
+  --muted: #8892a4;
+  --accent: #4f8ef7;
+  --accent2: #f7c94f;
+}
+[data-theme="light"] {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --muted: #718096;
+  --accent: #3b82f6;
+  --accent2: #d97706;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  padding: 16px;
+  transition: background .2s, color .2s;
+}
+.container { max-width: 720px; margin: 0 auto; }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.header-left { display: flex; align-items: center; gap: 12px; }
+.logo { font-size: 28px; line-height: 1; }
+.header-info h1 { font-size: 18px; font-weight: 700; }
+.header-info .meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.header-links { display: flex; gap: 10px; align-items: center; }
+.header-links a {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  transition: color .15s, border-color .15s;
+}
+.header-links a:hover { color: var(--accent); border-color: var(--accent); }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+/* 音频播放器 */
+.audio-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.audio-card .audio-label {
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.audio-card audio {
+  flex: 1;
+  height: 36px;
+  accent-color: var(--accent);
+}
+.report-body { word-break: break-word; overflow-wrap: break-word; }
+.report-body b, .report-body strong { color: var(--accent2); font-weight: 600; }
+.report-body a { color: var(--accent); text-decoration: none; }
+.report-body a:hover { text-decoration: underline; }
+.report-body a.material-ref {
+  color: var(--accent);
+  font-size: 12px;
+  padding: 0 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+.report-body a.material-ref:hover { border-color: var(--accent); }
+.report-body code {
+  background: #2a2d3a; padding: 1px 6px;
+  border-radius: 4px; font-size: 13px;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+.report-body pre {
+  background: #2a2d3a; padding: 12px;
+  border-radius: 8px; overflow-x: auto;
+  font-size: 13px; margin: 8px 0;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 24px;
+}
+.pagination a, .pagination span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--card);
+  transition: border-color .15s;
+}
+.pagination a:hover { border-color: var(--accent); color: var(--accent); }
+.pagination .disabled { opacity: 0.35; pointer-events: none; }
+.pagination .archive-btn { color: var(--muted); }
+.archive-list { list-style: none; }
+.archive-list li { border-bottom: 1px solid var(--border); padding: 12px 0; }
+.archive-list li:last-child { border-bottom: none; }
+.archive-list a {
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.archive-list a:hover { color: var(--accent); }
+.archive-list .badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: #2a2d3a;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.day-block { margin-bottom: 8px; }
+.day-label {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 8px 0 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 24px 0 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+footer a { color: var(--accent); text-decoration: none; }
+@media (max-width: 480px) {
+  body { font-size: 14px; padding: 12px; }
+  .card { padding: 16px; }
+  .header-links { display: none; }
+}
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--muted);
+  transition: border-color .15s;
+}
+#theme-toggle:hover { border-color: var(--accent); }
+</style>
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
+          <div class="logo">🍉</div>
+          <div class="header-info">
+            <h1>技术瓜新闻播报</h1>
+          </div>
+        </a>
+      </div>
+      
+<div class="header-links">
+  <a href="https://x.com/0xTechMelon" target="_blank">𝕏 @0xTechMelon</a>
+  <a href="https://weibo.tech-melon.top/" target="_blank">📊 监控</a>
+  <a href="/archive.html">📚 归档</a>
+  <a href="https://github.com/Tech-Melon/news-report-site" target="_blank">⭐ GitHub</a>
+  <button id="theme-toggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+</div>
+
+    </header>
+    
+<div style="margin-bottom:8px">
+  <div class="meta" style="font-size:13px;color:var(--muted)">☀️ 午报 · 2026年10月18日 12:11</div>
+</div>
+
+<div class="pagination">
+  <a href="/archive/2026-10-18-morning.html">← 上一篇</a>
+  <a class="archive-btn" href="/archive.html">📚 归档</a>
+  <span class="disabled">下一篇 →</span>
+</div>
+
+<div class="card">
+  <div class="report-body"><b>📰 国内新闻午报·2026 年10 月18 日</b><br>
+<b>⏰ 统计时间：08:00-12:00</b><br>
+<br>
+<b>🔥 重磅：我国首个全国产十万卡AI超集群真机亮相</b><br>
+<br>
+────────────────────<br>
+<br>
+<b>📋 详细新闻</b><br>
+<br>
+<b>🌍 国际局势</b><br>
+• <b>法国全国性抗议引发严重暴力骚乱</b>：10月17日法国数十万人上街抗议生活成本上涨、公共服务恶化，多地爆发警民冲突，约1200人被捕、超150名警察受伤，利摩日143年历史市政厅被焚致钟楼坍塌。 <a href="https://weibo.com/detail/5355335499120949">【M008】</a> <a href="https://weibo.com/detail/5355298306917574">【M019】</a> <a href="https://weibo.com/detail/5355325404219451">【M010】</a><br>
+• <b>泽连斯基称掌握星盾限速针对乌证据</b>：10月17日乌克兰总统泽连斯基表示，乌方通过在欧盟国家开展对比测试，掌握了美国SpaceX“星盾”系统限速仅针对乌克兰的证据，已保存相关测试记录。 <a href="https://weibo.com/detail/5355321912722649">【M012】</a><br>
+• <b>以色列定居者袭击欧洲外交官及记者</b>：当地时间10月17日，蒙面以色列定居者在约旦河西岸持金属棍棒袭击访问的欧洲外交官及随行记者，78岁法国市长遭殴打致瘫坐，此前已有美国记者遭围殴抢劫。 <a href="https://weibo.com/detail/5355319799583112">【M013】</a> <a href="https://weibo.com/detail/5355300673553847">【M060】</a> <a href="https://weibo.com/detail/5355329951111207">【M089】</a><br>
+• <b>伊朗海军称霍尔木兹海峡违规油轮增多</b>：10月17日伊朗海军表示，近期试图穿越霍尔木兹海峡禁航区的违规油轮数量呈上升趋势，当日一艘违规油轮在海峡东部入口附近起火失去航行能力，伊方持续管控海峡通行。 <a href="https://wx.tech-melon.top/cd1f22">【M005】</a><br>
+• <b>巴基斯坦20名警察遭武装分子绑架</b>：巴基斯坦俾路支省官员10月17日通报，16日晚一伙武装分子在默斯东地区高速公路拦截载警员的客车，释放司机和3名平民后，将车上20名警察连同车辆劫走。 <a href="https://weibo.com/detail/5355280764243018">【M134】</a><br>
+<br>
+<b>🏛️ 国内政经</b><br>
+• <b>习近平考察算力产业强调算电协同</b>：10月16日习近平在乌兰察布察哈尔高新技术开发区考察绿色算力产业，强调要加强科学规划，注重算电协同、算水协同，为后续算力产业发展指明方向。 <a href="https://weibo.com/detail/5355332387999051">【M034】</a> <a href="https://weibo.com/detail/5355320677501064">【M097】</a><br>
+<br>
+<b>🚀 科技商业</b><br>
+• <b>我国首个全国产十万卡AI超集群真机亮相</b>：2026全国高性能计算学术大会在深圳举办，今年建成的我国首个全国产十万卡AI超集群真机亮相，同步发布十大重要应用成果，算力可支撑大规模数字孪生模拟。 <a href="https://weibo.com/detail/5355319800106745">【M004】</a> <a href="https://weibo.com/detail/5355311440859591">【M015】</a><br>
+• <b>Anthropic拟融资600亿美元采购谷歌TPU</b>：Anthropic推进“北极星项目”，拟筹集600亿美元债务，采购约1.5吉瓦谷歌自研TPU，融资含420亿美元优先级债务、180亿美元次级债务，优先级债务由博通提供剩余价值担保。 <a href="https://weibo.com/detail/5355329866172086">【M001】</a> <a href="https://weibo.com/detail/5355324695642954">【M003】</a><br>
+• <b>中国空间站太空水稻培育取得重大进展</b>：神舟二十三号乘组近期完成空间站新一批水稻实验样品的采集、播种及存储工作，这是中国空间站首次开展水稻培育，将研究微重力对水稻遗传稳定性的影响。 <a href="https://weibo.com/detail/5355324841659107">【M011】</a> <a href="https://weibo.com/detail/5355334488032373">【M031】</a><br>
+• <b>特斯拉Roadster引入SpaceX推进系统</b>：特斯拉车辆工程副总裁莫拉维披露，新款Roadster除高功率电驱外，将引入风扇负压吸附技术和源自SpaceX的气体推进系统，该车年仅产2000台，仅搭载受限版FSD。 <a href="https://weibo.com/detail/5355295363566723">【M021】</a> <a href="https://wx.tech-melon.top/ab4b8f">【M042】</a> <a href="https://weibo.com/detail/5355295956011440">【M064】</a><br>
+• <b>外骨骼机器人价格下探至千元级</b>：目前消费级外骨骼机器人价格已下探至千元区间，可辅助老人行走，医用康复外骨骼已纳入多地医保，相关产品可帮助使用者大幅提升日常步行能力。 <a href="https://weibo.com/detail/5355322748961434">【M044】</a><br>
+• <b>OpenAI宣布将研发人形机器人</b>：OpenAI宣布将研发人形机器人，CEO奥尔特曼表示人形形态更适配人类设计的现有环境，研发核心是打造机器人智能“大脑”，目前已开放多个相关岗位招聘。 <a href="https://weibo.com/detail/5355282362533072">【M078】</a><br>
+<br>
+<b>📈 财经市场</b><br>
+• <b>OpenCode漏洞致用户API密钥外泄</b>：开源AI编程工具OpenCode发生安全漏洞，遭蒸馏攻击，1.4%的Console用户存放在工作区的OpenAI、Claude、Gemini等平台API密钥外泄，部分用户账户Token被耗尽。 <a href="https://weibo.com/detail/5355310235519938">【M017】</a> <a href="https://wx.tech-melon.top/08776d">【M024】</a> <a href="https://weibo.com/detail/5355284371605774">【M077】</a><br>
+• <b>iPhone Duo预购火爆发货排至明年1月</b>：苹果首款折叠屏iPhone Duo于10月16日开启预购，官网发货已排至2026年1月，线下门店被要求劝退无预约顾客，华强北渠道首批货源捆绑配售溢价近万元。 <a href="https://weibo.com/detail/5355286027044861">【M025】</a> <a href="https://weibo.com/detail/5355301725275215">【M059】</a><br>
+• <b>Swisse两批次抗糖丸被检出铅超标</b>：10月17日海关总署发布消费提示，澳大利亚TGA通报两批次Swisse品牌Beauty Skin Regeneration+（抗糖丸）铅含量超标，企业将启动召回，品牌方称涉事产品未进入中国市场。 <a href="https://weibo.com/detail/5355313755588400">【M104】</a> <a href="https://weibo.com/detail/5355309310673176">【M108】</a><br>
+• <b>智界汽车拟获独立造车资质</b>：10月16日工信部公示第412批道路机动车辆生产企业公告，安徽智界新能源汽车列入拟新准入生产企业清单，公示期至10月23日，内部人士确认智界有上市计划。 <a href="https://weibo.com/detail/5355291614382158">【M122】</a><br>
+<br>
+<b>💡 社会民生</b><br>
+• <b>AI伪造明星形象带货账号被封禁</b>：10月18日凌晨演员吴越发文，怒斥视频号“花姐美肤日记”利用AI技术伪造其形象直播带货，目前该账号已无法在微信平台检索到，被平台封禁。 <a href="https://weibo.com/detail/5355338401580043">【M028】</a> <a href="https://weibo.com/detail/5355328218860640">【M037】</a> <a href="https://weibo.com/detail/5355322011026621">【M045】</a><br>
+• <b>超强台风蔷琵中心风力达17级</b>：10月18日中央气象台监测显示，今年第30号台风“蔷琵”已加强为超强台风级，中心附近最大风力达17级（62米/秒），位于关岛附近洋面，强度仍将增强并向我国靠近。 <a href="https://weibo.com/detail/5355329103860472">【M091】</a> <a href="https://weibo.com/detail/5355301220125541">【M115】</a><br>
+• <b>职业差评团伙叫嚣花钱搞死店铺</b>：有职业差评团伙推出分级收费套餐，声称2700元即可让店铺数据作废，还称已搞死80多家店铺，通过恶意差评打压商家排名、破坏正常经营，扰乱公平竞争秩序。 <a href="https://weibo.com/detail/5355333896896615">【M032】</a><br>
+• <b>全家便利店被曝拖把池洗茶叶蛋锅</b>：上海徐汇区一家全家便利店被曝员工在公共厕所拖把池清洗煮茶叶蛋的锅，10月17日品牌方回应称已重新消毒，涉事门店暂停茶叶蛋销售并启动整改。 <a href="https://weibo.com/detail/5355329656980864">【M090】</a><br>
+<br>
+<b>🎬 文化体育</b><br>
+• <b>2026北京马拉松刷新赛会纪录</b>：10月18日2026北京马拉松开赛，共3.2万名选手参赛，埃塞俄比亚选手托拉以2小时03分10秒夺冠，打破北马赛会纪录，同时刷新中国境内全马最快完赛成绩。 <a href="https://weibo.com/detail/5355317866004566">【M046】</a> <a href="https://wx.tech-melon.top/626254">【M109】</a> <a href="https://weibo.com/detail/5355307854988173">【M112】</a><br>
+• <b>张水华西安马拉松夺冠突破230大关</b>：10月18日2026西安马拉松举办，有“最快女护士”之称的职业跑者张水华以2小时29分左右的成绩夺得女子组冠军，刷新个人最好成绩，首次跑进2小时30分大关。 <a href="https://wx.tech-melon.top/3808c0">【M038】</a> <a href="https://weibo.com/detail/5355330416413493">【M088】</a><br>
+• <b>上海大歌剧院开幕首秀点亮黄浦江</b>：10月17日晚，形似巨型“中国扇”的上海大歌剧院在黄浦江畔世博文化公园亮灯，举办开幕首秀，同步拉开第25届上海国际艺术节帷幕。 <a href="https://weibo.com/detail/5355280873557914">【M080】</a><br>
+• <b>冯远征批艺考招生追求高富帅</b>：北京人艺院长冯远征近日表示，当前艺术院校招生一味追求“高富帅”，导致剧院排演《茶馆》时找不到适配“黄胖子”等特定角色的演员，中小身高演员出现断档。 <a href="https://weibo.com/detail/5355336911553230">【M084】</a> <a href="https://weibo.com/detail/5355288507187248">【M125】</a> <a href="https://weibo.com/detail/5355281739678194">【M133】</a><br>
+<br>
+<b>🔥 重点关注</b><br>
+
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx1.sinaimg.cn/orj480/003z5L7fly1ii68s6to13j61hc0u07bm02.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">一、🔥 <b>我国首个全国产十万卡AI超集群真机亮相</b>：该集群今年在深圳建成，亮相2026全国高性能计算学术大会，同步发布十大应用成果，算力可支撑数字孪生大脑、百亿光年尺度宇宙演化模拟。 <a href="https://weibo.com/detail/5355319800106745">【M004】</a> <a href="https://weibo.com/detail/5355311440859591">【M015】</a></div>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx2.sinaimg.cn/orj480/0029D7FZly1ii6covntuij60k00zk3zl02.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">二、🚨 <b>法国全国性抗议引发严重暴力骚乱</b>：<b>10月</b><b>17日</b>抗议活动蔓延巴黎、里昂等多城，冲突致超<b>150名</b>警察受伤，约<b>1200人</b>被捕，利摩日百年市政厅被焚、钟楼坍塌，多地奢侈品店遭打砸抢。 <a href="https://weibo.com/detail/5355335499120949">【M008】</a> <a href="https://weibo.com/detail/5355298306917574">【M019】</a> <a href="https://weibo.com/detail/5355325404219451">【M010】</a></div>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx4.sinaimg.cn/wap360/001Ur7cfgy1ii69k6xfeqj60j60as78q02.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">三、🎯 <b>Anthropic拟融资<b>600亿</b>美元采购谷歌TPU</b>：该融资名为“北极星项目”，所筹资金将采购1.5吉瓦谷歌TPU，其中<b>420亿</b>为优先级债务由博通担保，<b>180亿</b>为次级债务，融资成本约<b>10%</b>。 <a href="https://weibo.com/detail/5355329866172086">【M001】</a> <a href="https://weibo.com/detail/5355324695642954">【M003】</a></div>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx1.sinaimg.cn/orj480/006FcX4dly1ii6clowmbdj30k00zk0uc.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">四、📌 <b>AI伪造明星形象带货账号被封禁</b>：<b>10月</b><b>18日</b>演员吴越公开怒斥视频号“花姐美肤日记”用AI换脸伪造其形象直播带货售假，目前该涉事账号已被平台封禁，无法检索。 <a href="https://weibo.com/detail/5355338401580043">【M028】</a> <a href="https://weibo.com/detail/5355328218860640">【M037】</a> <a href="https://weibo.com/detail/5355322011026621">【M045】</a></div>
+</div><br>
+────────────────────<br>
+<br>
+<b>📊 技术瓜实时监控</b>：<a href="https://weibo.tech-melon.top/">点击访问</a><br>
+<b>💬 交流群</b>：<a href="https://t.me/addlist/gAowuV_p-6g3NDE1">点击加入</a><br>
+<b>🌐 网页版</b>：<a href="https://news.jishugua.top/">点击阅读</a></div>
+</div>
+
+<div class="pagination">
+  <a href="/archive/2026-10-18-morning.html">← 上一篇</a>
+  <a class="archive-btn" href="/archive.html">📚 归档</a>
+  <span class="disabled">下一篇 →</span>
+</div>
+    
+<footer>
+  <p>
+    <a href="https://x.com/0xTechMelon" target="_blank">𝕏 @0xTechMelon</a>
+    &nbsp;·&nbsp;
+    <a href="https://weibo.tech-melon.top/" target="_blank">实时监控</a>
+    &nbsp;·&nbsp;
+    <a href="https://t.me/addlist/gAowuV_p-6g3NDE1" target="_blank">交流群</a>
+    &nbsp;·&nbsp;
+    <a href="/archive.html">往期归档</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Tech-Melon/news-report-site" target="_blank">GitHub</a>
+  </p>
+  <p style="margin-top:6px">© 2026 技术瓜新闻播报</p>
+</footer>
+
+  </div>
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.getElementById('theme-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    // 初始化按钮图标
+    (function() {
+      var t = localStorage.getItem('theme') || 'dark';
+      var btn = document.getElementById('theme-toggle');
+      if (btn) btn.textContent = t === 'dark' ? '🌙' : '☀️';
+    })();
+  </script>
+</body>
+</html>
