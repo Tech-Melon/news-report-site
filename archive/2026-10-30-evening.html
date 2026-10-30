@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技术瓜新闻晚报 · 2026年10月30日</title>
+  <style>
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e2e8f0;
+  --muted: #8892a4;
+  --accent: #4f8ef7;
+  --accent2: #f7c94f;
+}
+[data-theme="light"] {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --muted: #718096;
+  --accent: #3b82f6;
+  --accent2: #d97706;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  padding: 16px;
+  transition: background .2s, color .2s;
+}
+.container { max-width: 720px; margin: 0 auto; }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.header-left { display: flex; align-items: center; gap: 12px; }
+.logo { font-size: 28px; line-height: 1; }
+.header-info h1 { font-size: 18px; font-weight: 700; }
+.header-info .meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.header-links { display: flex; gap: 10px; align-items: center; }
+.header-links a {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  transition: color .15s, border-color .15s;
+}
+.header-links a:hover { color: var(--accent); border-color: var(--accent); }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+/* 音频播放器 */
+.audio-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.audio-card .audio-label {
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.audio-card audio {
+  flex: 1;
+  height: 36px;
+  accent-color: var(--accent);
+}
+.report-body { word-break: break-word; overflow-wrap: break-word; }
+.report-body b, .report-body strong { color: var(--accent2); font-weight: 600; }
+.report-body a { color: var(--accent); text-decoration: none; }
+.report-body a:hover { text-decoration: underline; }
+.report-body a.material-ref {
+  color: var(--accent);
+  font-size: 12px;
+  padding: 0 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+.report-body a.material-ref:hover { border-color: var(--accent); }
+.report-body code {
+  background: #2a2d3a; padding: 1px 6px;
+  border-radius: 4px; font-size: 13px;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+.report-body pre {
+  background: #2a2d3a; padding: 12px;
+  border-radius: 8px; overflow-x: auto;
+  font-size: 13px; margin: 8px 0;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 24px;
+}
+.pagination a, .pagination span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--card);
+  transition: border-color .15s;
+}
+.pagination a:hover { border-color: var(--accent); color: var(--accent); }
+.pagination .disabled { opacity: 0.35; pointer-events: none; }
+.pagination .archive-btn { color: var(--muted); }
+.archive-list { list-style: none; }
+.archive-list li { border-bottom: 1px solid var(--border); padding: 12px 0; }
+.archive-list li:last-child { border-bottom: none; }
+.archive-list a {
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.archive-list a:hover { color: var(--accent); }
+.archive-list .badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: #2a2d3a;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.day-block { margin-bottom: 8px; }
+.day-label {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 8px 0 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 24px 0 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+footer a { color: var(--accent); text-decoration: none; }
+@media (max-width: 480px) {
+  body { font-size: 14px; padding: 12px; }
+  .card { padding: 16px; }
+  .header-links { display: none; }
+}
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--muted);
+  transition: border-color .15s;
+}
+#theme-toggle:hover { border-color: var(--accent); }
+</style>
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
+          <div class="logo">🍉</div>
+          <div class="header-info">
+            <h1>技术瓜新闻播报</h1>
+          </div>
+        </a>
+      </div>
+      
+<div class="header-links">
+  <a href="https://x.com/0xTechMelon" target="_blank">𝕏 @0xTechMelon</a>
+  <a href="https://weibo.tech-melon.top/" target="_blank">📊 监控</a>
+  <a href="/archive.html">📚 归档</a>
+  <a href="https://github.com/Tech-Melon/news-report-site" target="_blank">⭐ GitHub</a>
+  <button id="theme-toggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+</div>
+
+    </header>
+    
+<div style="margin-bottom:8px">
+  <div class="meta" style="font-size:13px;color:var(--muted)">🌙 晚报 · 2026年10月30日 20:12</div>
+</div>
+
+<div class="pagination">
+  <a href="/archive/2026-10-30-noon.html">← 上一篇</a>
+  <a class="archive-btn" href="/archive.html">📚 归档</a>
+  <span class="disabled">下一篇 →</span>
+</div>
+
+<div class="card">
+  <div class="report-body"><b>📰 国内新闻晚报·2026 年10 月30 日</b><br>
+<b>⏰ 统计时间：12:00-20:00</b><br>
+<br>
+<b>🔥 重磅：攻击-21隐身无人机首次在四川舰成功起降</b><br>
+<br>
+────────────────────<br>
+<br>
+<b>📋 详细新闻</b><br>
+<br>
+<b>🌍 国际局势</b><br>
+• <b>外交部驳斥纽约时报涉黄仁勋报道不实</b>：10月30日外交部例行记者会上，发言人郭嘉昆回应《纽约时报》所谓中国女高管为情报人员、与黄仁勋关系密切的报道，称其捕风捉影，纯属对中国的污蔑抹黑。 <a href="https://wx.tech-melon.top/70561a">【M047】</a> <a href="https://weibo.com/detail/5359746542733846">【M094】</a><br>
+• <b>美国或对伊朗发动重大军事行动</b>：据美媒10月29日报道，美国中央司令部司令布拉德·库珀赴白宫向特朗普汇报针对伊朗的军事选项，当前美国正考虑是否恢复对伊朗的大规模作战行动。 <a href="https://weibo.com/detail/5359789255164876">【M155】</a><br>
+• <b>美军事基地冰柜故障疑遭黑客攻击</b>：针对今年8月美国多个军事基地冰柜接连故障、导致大量食品变质的事件，五角大楼正将其定性为疑似黑客攻击事件开展相关调查。 <a href="https://weibo.com/detail/5359691498522402">【M137】</a> <a href="https://weibo.com/detail/5359793418273076">【M153】</a><br>
+<br>
+<b>🏛️ 国内政经</b><br>
+• <b>攻击-21隐身无人机首次在四川舰成功起降</b>：10月下旬，我军首型舰载察打一体隐身无人机攻击-21，在我国首艘076型两栖攻击舰四川舰完成首次电磁弹射起降，标志海军具备固定翼隐身无人机上大型海上作战平台的能力。 <a href="https://wx.tech-melon.top/9ca511">【M006】</a> <a href="https://weibo.com/detail/5359774312956221">【M023】</a> <a href="https://weibo.com/detail/5359761767793166">【M088】</a><br>
+<br>
+<b>🚀 科技商业</b><br>
+• <b>DeepSeek完成1055亿二轮融资估值6155亿</b>：据外媒报道，DeepSeek完成第二轮1055亿元融资，腾讯、宁德时代、中芯国际、美团等近30家机构参投，估值达6155亿元，目前正推进科创板上市计划。 <a href="https://weibo.com/detail/5359735184557710">【M010】</a> <a href="https://weibo.com/detail/5359760561406290">【M041】</a> <a href="https://weibo.com/detail/5359727762736043">【M055】</a><br>
+• <b>马斯克公布Neuralink两款脑机接口新品</b>：10月30日，马斯克公布Neuralink两款脑机产品，首款“心灵感应”可实现意念高速通信，第二款“盲视”技术已就绪，待监管批准后有望帮助失明患者恢复视觉。 <a href="https://weibo.com/detail/5359798201092773">【M018】</a> <a href="https://weibo.com/detail/5359784216757893">【M021】</a> <a href="https://wx.tech-melon.top/00f6e8">【M046】</a><br>
+• <b>奥特曼称纳维-斯托克斯证明耗千万美元算力</b>：OpenAI CEO奥特曼在播客中透露，9月发布的纳维-斯托克斯方程相关证明消耗了约千万美元量级的算力，预计一年后同类计算成本可降至当前的百分之一。 <a href="https://weibo.com/detail/5359771180861713">【M024】</a> <a href="https://weibo.com/detail/5359746477462029">【M095】</a><br>
+• <b>中国团队发布世界模型Mundo登顶榜单</b>：中国团队发布物理世界模型Mundo，在相关评测中拿下四项第一，性能对标谷歌DeepMind的Genie 4与李飞飞团队的Atlas，是世界模型赛道的重要国产成果。 <a href="https://weibo.com/detail/5359782921243876">【M075】</a> <a href="https://wx.tech-melon.top/3ac9dc">【M079】</a><br>
+• <b>欣旺达全固态电池完成工艺验证送样</b>：欣旺达在互动平台表示，公司全固态电池已完成产品方案与工艺验证，目前正对接客户开展送样测试，同时回应了理想、小米切换自研电池对公司业绩影响的相关问题。 <a href="https://weibo.com/detail/5359720095023114">【M119】</a> <a href="https://weibo.com/detail/5359714629845590">【M121】</a><br>
+• <b>国产AI漫剧出海海外活跃用户超1.5亿</b>：国产AI漫剧出海从翻译搬运转向本土制作，目前已有约10家中国企业搭建海外短剧平台，海外AI漫剧活跃用户超1.5亿，海外万次播放收益可达1至10美元。 <a href="https://weibo.com/detail/5359766219522528">【M082】</a> <a href="https://weibo.com/detail/5359723824022110">【M113】</a> <a href="https://weibo.com/detail/5359713441024663">【M123】</a><br>
+• <b>特斯拉发布Roadster Rocket飞行跑车</b>：特斯拉在美国得州发布Roadster Rocket跑车，演示中车辆借助压缩气体推进与地面效应风扇，实现腾空翻滚180度四轮着地、坡面倒挂行驶，演示全程未载人。 <a href="https://weibo.com/detail/5359710598338628">【M062】</a> <a href="https://weibo.com/detail/5359763958534372">【M086】</a> <a href="https://weibo.com/detail/5359726269568080">【M109】</a><br>
+• <b>太阳系外围发现疑似第六颗矮行星</b>：天文学家利用智利鲁宾天文台观测数据，在太阳系外围发现一颗神秘天体，疑似为新的矮行星，若后续确认，将成为太阳系第六颗经正式认定的矮行星。 <a href="https://weibo.com/detail/5359699660112248">【M133】</a><br>
+<br>
+<b>📈 财经市场</b><br>
+• <b>币安疑遭黑客入侵冻结逾30亿美元资产</b>：10月30日，全球最大加密货币交易所币安疑似热钱包遭黑客入侵，冻结超30亿美元资产并暂停部分交易，平台称将承担全部损失，被盗比特币或难以追回。 <a href="https://weibo.com/detail/5359725145230127">【M012】</a> <a href="https://weibo.com/detail/5359696140828808">【M014】</a> <a href="https://weibo.com/detail/5359729364437972">【M053】</a><br>
+• <b>英特尔财报指引不佳盘后股价暴跌超23%</b>：当地时间10月29日美股盘后，英特尔发布财报，三季度营收同比增长21%，但四季度业绩指引大幅低于市场预期，叠加工厂爆炸或致6亿美元损失，股价盘后一度暴跌超23%。 <a href="https://weibo.com/detail/5359755495473220">【M043】</a> <a href="https://weibo.com/detail/5359729859363220">【M052】</a><br>
+• <b>三星预警2027年存储芯片短缺加剧</b>：三星在三季度财报电话会上预警，受AI产业需求拉动，全球存储芯片短缺局面2027年将进一步加剧，供给紧张或延续至2028年，将影响AI服务器及消费电子产业链。 <a href="https://weibo.com/detail/5359749461706159">【M045】</a><br>
+• <b>苹果被曝长期强势压价闪存威胁厂商</b>：据《华尔街日报》报道，苹果长期凭借采购量优势强势压低闪存采购价格，曾威胁闪迪时任CEO，靠压价闪存累计获利约百亿美元，直到AI需求推高芯片价格才动摇其议价优势。 <a href="https://weibo.com/detail/5359761174302307">【M009】</a> <a href="https://weibo.com/detail/5359691606787449">【M065】</a> <a href="https://wx.tech-melon.top/de3b0a">【M057】</a><br>
+• <b>DDR5内存一年暴涨760%高端套装天价</b>：据日本秋叶原市场10月中下旬价格调查，DDR5内存价格一年内涨幅达760%，其中128GB高端套装售价已突破50万日元，大容量高规格产品价格涨幅尤为明显。 <a href="https://weibo.com/detail/5359711929240118">【M125】</a> <a href="https://weibo.com/detail/5359702616573309">【M130】</a><br>
+• <b>无印良品APP遭入侵2726万条信息泄露</b>：10月30日日本无印良品运营商良品计划通报，旗下MUJI APP遭非法访问，约2726万条用户信息外泄，涉及邮箱、出生日期、性别等，不含信用卡、姓名住址信息，中国区不受影响。 <a href="https://weibo.com/detail/5359785071610623">【M164】</a> <a href="https://weibo.com/detail/5359781734252664">【M168】</a><br>
+• <b>长鑫科技Q3营收1187亿净利近890亿</b>：10月30日晚长鑫科技发布2026年三季报，第三季度实现营收1187.14亿元，净利润889.83亿元，环比均增长约19%，同时披露第六代DRAM平台产品已完成工程开发。 <a href="https://weibo.com/detail/5359801517214448">【M143】</a><br>
+<br>
+<b>💡 社会民生</b><br>
+• <b>网红边牧锄头被盗杀主人捐30万和解款</b>：河南商丘网红边牧“锄头”被盗杀案达成和解，主人郭先生已收到30万元赔偿款并签署谅解协议，后续将把全部和解款捐赠给动物救助机构。 <a href="https://weibo.com/detail/5359760113408169">【M042】</a> <a href="https://weibo.com/detail/5359779331180453">【M078】</a> <a href="https://weibo.com/detail/5359747945730848">【M092】</a><br>
+• <b>云南自主培育文秀娇龙月季正式上市</b>：10月29日，云南自主培育、拥有完整自主知识产权的“文秀”“娇龙”两款月季鲜切花在昆明正式上市，分别致敬黄文秀、贺娇龙，是国产月季育种的代表性成果。 <a href="https://weibo.com/detail/5359806957227314">【M067】</a> <a href="https://weibo.com/detail/5359801666115834">【M069】</a> <a href="https://weibo.com/detail/5359713752712138">【M122】</a><br>
+• <b>反诈博主徽剑被假冒警察劫持致死案二审</b>：反诈博主“徽剑”吴恺2024年遭冒充警察人员跨省劫持殴打致死案二审宣判，主犯赵冰被判死缓，全案14名被告人均获刑，该案背后为境外发布的百万元有偿劫持任务。 <a href="https://wx.tech-melon.top/c3cc6a">【M070】</a> <a href="https://weibo.com/detail/5359805512286393">【M142】</a><br>
+• <b>茉莉奶白联名水杯炸裂伤人全渠道下架</b>：茉莉奶白与Chiikawa联名玻璃杯被曝清水冲洗时即发生炸裂，导致用户受伤住院，品牌已全渠道下架该款水杯，并对已售出产品提供全额退款。 <a href="https://weibo.com/detail/5359708216754484">【M127】</a> <a href="https://wx.tech-melon.top/8d78a7">【M172】</a><br>
+• <b>小伙婚礼全网摇人上万网友到场祝福</b>：云南昭通博主“小小徐”因亲戚少担心婚礼冷清，发视频邀请网友到场，上万名天南海北的网友赴现场祝贺，网友还自发帮忙布置婚房、赠送贺礼。 <a href="https://weibo.com/detail/5359800256301212">【M144】</a> <a href="https://weibo.com/detail/5359774880499688">【M178】</a><br>
+<br>
+<b>🎬 文化体育</b><br>
+• <b>演员帕特里克·斯图尔特去世享年86岁</b>：当地时间10月28日，英国知名演员帕特里克·斯图尔特在洛杉矶家中去世，享年86岁，他曾出演《星际迷航》《X战警》中X教授一角，生前患阿尔茨海默症与路易体痴呆症。 <a href="https://weibo.com/detail/5359706912852458">【M001】</a> <a href="https://wx.tech-melon.top/da30e5">【M003】</a> <a href="https://weibo.com/detail/5359691901438244">【M005】</a><br>
+• <b>影之刃零发售不足一小时登顶Steam全球榜</b>：10月29日，国产游戏《影之刃零》发售不足一小时便登顶Steam全球畅销榜，同时在线人数突破30万，热度持续攀升，成为国产游戏出海的又一热门作品。 <a href="https://weibo.com/detail/5359717987912550">【M060】</a><br>
+• <b>赵家驹成巨人之旅330首位中国籍冠军</b>：中国越野跑运动员赵家驹在意大利巨人之旅330越野赛中夺冠，成为该赛事首位中国籍冠军，同时打破赛道纪录。 <a href="https://weibo.com/detail/5359788093341935">【M157】</a><br>
+<br>
+<b>🔥 重点关注</b><br>
+
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//mmbiz.qpic.cn/sz_mmbiz_jpg/7mWsINAU4U89yduKE2osS5NNlOPGdyb3FaB4sLCxFS2mdsHLT4qo6AUYvSSh1qRLibiaSNmO24ooILLibb58bFKyOPayqCqjCgyHkV76qCrsZg/0%3Fwx_fmt%3Djpeg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">一、🔥 <b>攻击-21隐身无人机首次在四川舰成功起降</b>：本次试验在<b>10月</b>下旬海试期间开展，依托电磁弹射技术完成起降，是076型两栖攻击舰发展的关键突破，填补了海军大型两栖平台搭载固定翼隐身无人机的能力空白。 <a href="https://wx.tech-melon.top/9ca511">【M006】</a> <a href="https://weibo.com/detail/5359774312956221">【M023】</a> <a href="https://weibo.com/detail/5359761767793166">【M088】</a></div>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx3.sinaimg.cn/wap360/001ZzMwgly1iike6q6m2ej60j60axacv02.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">二、🚨 <b>DeepSeek完成<b>1055亿</b>二轮融资估值<b>6155亿</b></b>：本轮融资由腾讯、宁德时代、中芯国际、美团等近<b>30家</b>头部机构参投，融资后公司估值达<b>6155亿</b>元，目前正推进科创板上市相关筹备工作。 <a href="https://weibo.com/detail/5359735184557710">【M010】</a> <a href="https://weibo.com/detail/5359760561406290">【M041】</a> <a href="https://weibo.com/detail/5359727762736043">【M055】</a></div>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx1.sinaimg.cn/orj480/002diGk7ly8iikcsz7mk8j60u01hc0y202.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">三、🎯 <b>币安疑遭黑客入侵冻结逾<b>30亿</b>美元资产</b>：事件发生于<b>10月</b><b>30日</b>，平台为防控风险暂停部分交易并冻结超<b>30亿</b>美元资产，称将承担全部用户损失，业内判断被盗比特币大概率无法追回，已引发加密货币价格下挫。 <a href="https://weibo.com/detail/5359725145230127">【M012】</a> <a href="https://weibo.com/detail/5359696140828808">【M014】</a> <a href="https://weibo.com/detail/5359729364437972">【M053】</a></div>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx1.sinaimg.cn/wap360/001ZzMwgly1iikay5fzjwj60v71hahcw02.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">四、📌 <b>演员帕特里克·斯图尔特去世享年86岁</b>：斯图尔特为英国知名演员，因饰演《X战警》系列“X教授”、《星际迷航》相关角色被全球观众熟知，生前罹患阿尔茨海默症与路易体痴呆症，去世时家人陪伴在侧。 <a href="https://weibo.com/detail/5359706912852458">【M001】</a> <a href="https://wx.tech-melon.top/da30e5">【M003】</a> <a href="https://weibo.com/detail/5359691901438244">【M005】</a></div>
+</div><br>
+────────────────────<br>
+<br>
+<b>📊 技术瓜实时监控</b>：<a href="https://weibo.tech-melon.top/">点击访问</a><br>
+<b>💬 交流群</b>：<a href="https://t.me/addlist/gAowuV_p-6g3NDE1">点击加入</a><br>
+<b>🌐 网页版</b>：<a href="https://news.jishugua.top/">点击阅读</a></div>
+</div>
+
+<div class="pagination">
+  <a href="/archive/2026-10-30-noon.html">← 上一篇</a>
+  <a class="archive-btn" href="/archive.html">📚 归档</a>
+  <span class="disabled">下一篇 →</span>
+</div>
+    
+<footer>
+  <p>
+    <a href="https://x.com/0xTechMelon" target="_blank">𝕏 @0xTechMelon</a>
+    &nbsp;·&nbsp;
+    <a href="https://weibo.tech-melon.top/" target="_blank">实时监控</a>
+    &nbsp;·&nbsp;
+    <a href="https://t.me/addlist/gAowuV_p-6g3NDE1" target="_blank">交流群</a>
+    &nbsp;·&nbsp;
+    <a href="/archive.html">往期归档</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Tech-Melon/news-report-site" target="_blank">GitHub</a>
+  </p>
+  <p style="margin-top:6px">© 2026 技术瓜新闻播报</p>
+</footer>
+
+  </div>
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.getElementById('theme-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    // 初始化按钮图标
+    (function() {
+      var t = localStorage.getItem('theme') || 'dark';
+      var btn = document.getElementById('theme-toggle');
+      if (btn) btn.textContent = t === 'dark' ? '🌙' : '☀️';
+    })();
+  </script>
+</body>
+</html>
