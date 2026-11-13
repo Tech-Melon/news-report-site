@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技术瓜新闻早报 · 2026年11月13日</title>
+  <style>
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2d3a;
+  --text: #e2e8f0;
+  --muted: #8892a4;
+  --accent: #4f8ef7;
+  --accent2: #f7c94f;
+}
+[data-theme="light"] {
+  --bg: #f5f7fa;
+  --card: #ffffff;
+  --border: #e2e8f0;
+  --text: #1a202c;
+  --muted: #718096;
+  --accent: #3b82f6;
+  --accent2: #d97706;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC",
+               "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 15px;
+  line-height: 1.8;
+  padding: 16px;
+  transition: background .2s, color .2s;
+}
+.container { max-width: 720px; margin: 0 auto; }
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0 16px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 24px;
+}
+.header-left { display: flex; align-items: center; gap: 12px; }
+.logo { font-size: 28px; line-height: 1; }
+.header-info h1 { font-size: 18px; font-weight: 700; }
+.header-info .meta { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.header-links { display: flex; gap: 10px; align-items: center; }
+.header-links a {
+  font-size: 12px;
+  color: var(--muted);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 10px;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  transition: color .15s, border-color .15s;
+}
+.header-links a:hover { color: var(--accent); border-color: var(--accent); }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+}
+/* 音频播放器 */
+.audio-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.audio-card .audio-label {
+  font-size: 13px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.audio-card audio {
+  flex: 1;
+  height: 36px;
+  accent-color: var(--accent);
+}
+.report-body { word-break: break-word; overflow-wrap: break-word; }
+.report-body b, .report-body strong { color: var(--accent2); font-weight: 600; }
+.report-body a { color: var(--accent); text-decoration: none; }
+.report-body a:hover { text-decoration: underline; }
+.report-body a.material-ref {
+  color: var(--accent);
+  font-size: 12px;
+  padding: 0 4px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+.report-body a.material-ref:hover { border-color: var(--accent); }
+.report-body code {
+  background: #2a2d3a; padding: 1px 6px;
+  border-radius: 4px; font-size: 13px;
+  font-family: "SF Mono", "Fira Code", monospace;
+}
+.report-body pre {
+  background: #2a2d3a; padding: 12px;
+  border-radius: 8px; overflow-x: auto;
+  font-size: 13px; margin: 8px 0;
+}
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0 24px;
+}
+.pagination a, .pagination span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid var(--border);
+  color: var(--text);
+  background: var(--card);
+  transition: border-color .15s;
+}
+.pagination a:hover { border-color: var(--accent); color: var(--accent); }
+.pagination .disabled { opacity: 0.35; pointer-events: none; }
+.pagination .archive-btn { color: var(--muted); }
+.archive-list { list-style: none; }
+.archive-list li { border-bottom: 1px solid var(--border); padding: 12px 0; }
+.archive-list li:last-child { border-bottom: none; }
+.archive-list a {
+  color: var(--text);
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.archive-list a:hover { color: var(--accent); }
+.archive-list .badge {
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 99px;
+  background: #2a2d3a;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.day-block { margin-bottom: 8px; }
+.day-label {
+  font-size: 12px;
+  color: var(--muted);
+  padding: 8px 0 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 4px;
+}
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+  padding: 24px 0 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+footer a { color: var(--accent); text-decoration: none; }
+@media (max-width: 480px) {
+  body { font-size: 14px; padding: 12px; }
+  .card { padding: 16px; }
+  .header-links { display: none; }
+}
+#theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: var(--muted);
+  transition: border-color .15s;
+}
+#theme-toggle:hover { border-color: var(--accent); }
+</style>
+  <script>
+    (function() {
+      var t = localStorage.getItem('theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-left">
+        <a href="/" style="display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit">
+          <div class="logo">🍉</div>
+          <div class="header-info">
+            <h1>技术瓜新闻播报</h1>
+          </div>
+        </a>
+      </div>
+      
+<div class="header-links">
+  <a href="https://x.com/0xTechMelon" target="_blank">𝕏 @0xTechMelon</a>
+  <a href="https://weibo.tech-melon.top/" target="_blank">📊 监控</a>
+  <a href="/archive.html">📚 归档</a>
+  <a href="https://github.com/Tech-Melon/news-report-site" target="_blank">⭐ GitHub</a>
+  <button id="theme-toggle" onclick="toggleTheme()" title="切换主题">🌙</button>
+</div>
+
+    </header>
+    
+<div style="margin-bottom:8px">
+  <div class="meta" style="font-size:13px;color:var(--muted)">🌅 早报 · 2026年11月13日 08:12</div>
+</div>
+
+<div class="pagination">
+  <a href="/archive/2026-11-12-evening.html">← 上一篇</a>
+  <a class="archive-btn" href="/archive.html">📚 归档</a>
+  <span class="disabled">下一篇 →</span>
+</div>
+
+<div class="card">
+  <div class="report-body"><b>📰 国内新闻早报·2026 年11 月13 日</b><br>
+<b>⏰ 统计时间：20:00-08:00</b><br>
+<br>
+<b>🔥 重磅：黄仁勋辞任英伟达CEO 科莱特·克雷斯任临时CEO</b><br>
+<br>
+────────────────────<br>
+<br>
+<b>📋 详细新闻</b><br>
+<br>
+<b>🌍 国际局势</b><br>
+• <b>特朗普推荐库克接任英伟达CEO</b>：美国总统特朗普11月12日在社交媒体发文，称黄仁勋此前工作出色，苹果公司的蒂姆·库克是唯一能接替黄仁勋出任英伟达CEO的人选，称“一位传奇接替另一位传奇”。 <a href="https://wx.tech-melon.top/a91a99">【M094】</a> <a href="https://weibo.com/detail/5364693981989621">【M104】</a> <a href="https://weibo.com/detail/5364584718536624">【M127】</a><br>
+• <b>马斯克支持黄仁勋任英伟达董事长</b>：黄仁勋宣布辞任CEO后，马斯克在社交媒体参与相关讨论，发声支持黄仁勋出任英伟达董事长，认同科技公司创始人不应被轻易替换的观点。 <a href="https://weibo.com/detail/5364694735913565">【M103】</a> <a href="https://weibo.com/detail/5364689626205108">【M116】</a><br>
+• <b>英伟达任命首任董事会主席哈维·琼斯</b>：英伟达11月12日发布的人事公告显示，哈维·C·琼斯被任命为公司首任董事会主席，这是英伟达首次设立董事会主席职位，配合本次管理层调整完善公司治理结构。 <a href="https://weibo.com/detail/5364555154984378">【M148】</a><br>
+<br>
+<b>🚀 科技商业</b><br>
+• <b>黄仁勋辞任英伟达CEO 科莱特·克雷斯任临时CEO</b>：11月12日英伟达公告，黄仁勋即刻辞去总裁、CEO及董事职务，CFO科莱特·克雷斯兼任临时CEO，董事会启动内外部遴选，哈维·琼斯任首任董事会主席，公告未说明辞任原因。 <a href="https://wx.tech-melon.top/d176e1">【M003】</a> <a href="https://weibo.com/detail/5364558525106028">【M034】</a> <a href="https://weibo.com/detail/5364550517918182">【M072】</a><br>
+• <b>SpaceX星舰将第15次试飞 首次挑战双级捕获</b>：SpaceX将开展星舰第15次试飞，首次尝试用发射塔“筷子”机械臂先后捕获超级重型助推器和绕地球飞行超22小时后返回的星舰飞船，若成功将实现首枚轨道级火箭完整回收。 <a href="https://weibo.com/detail/5364699199703138">【M009】</a><br>
+• <b>马斯克称招揽黄仁勋将是荣幸</b>：11月12日黄仁勋辞任英伟达相关职务后，马斯克在社交媒体回应网友聘用提议时表示，如果能够聘请到黄仁勋，将是自己的荣幸。 <a href="https://weibo.com/detail/5364687895266070">【M119】</a> <a href="https://weibo.com/detail/5364585372847034">【M126】</a><br>
+• <b>美司法部对英伟达启动多项调查</b>：据报道，黄仁勋辞任引发的连锁反应持续发酵，美国司法部正推进针对英伟达的反垄断调查，另外两项涉及Megaspeed、超微电脑的调查也可能将英伟达纳入范围，暂无刑事起诉迹象。 <a href="https://weibo.com/detail/5364693557315936">【M107】</a> <a href="https://weibo.com/detail/5364691536971340">【M110】</a> <a href="https://weibo.com/detail/5364676008870762">【M124】</a><br>
+• <b>曝SpaceX与特斯拉推进合并谈判</b>：据彭博社报道，马斯克旗下SpaceX与特斯拉正推进合并谈判，双方董事会及顾问团队正磋商交易条款、治理结构等事项，最快12月公布协议，合计市值约3.45万亿美元，仍面临监管障碍。 <a href="https://weibo.com/detail/5364690570183227">【M113】</a> <a href="https://weibo.com/detail/5364678954057816">【M123】</a> <a href="https://wx.tech-melon.top/24988e">【M118】</a><br>
+• <b>微软365核心服务全球性大规模瘫痪</b>：微软365多项核心云服务发生全球性大规模故障，Outlook、Exchange Online、Teams、OneDrive等产品受影响，全球多个地区用户反馈无法正常访问，服务正逐步重启恢复。 <a href="https://weibo.com/detail/5364688843702588">【M171】</a><br>
+• <b>SpaceX拟投超740亿美元建AI超算园区</b>：SpaceX11月12日宣布，计划在得克萨斯州和亚利桑那州投入超740亿美元，建设两座面向人工智能的超级计算数据中心园区，标志着该公司加速向AI算力基础设施领域布局。 <a href="https://weibo.com/detail/5364688841868525">【M172】</a> <a href="https://weibo.com/detail/5364684535629283">【M174】</a><br>
+• <b>Google发布Gemini 4 Hydrogen模型</b>：谷歌11月12日发布Gemini 4 Hydrogen模型，该模型为Gemini 4系列主打快和省的主力版本，对标Claude Sonnet 5.5和GPT-6.1 Terra，Gemini付费用户可选用，开发者免费层即可使用。 <a href="https://weibo.com/detail/5364616918205947">【M175】</a><br>
+• <b>马斯克裁撤xAI整个多模态团队</b>：据量子位报道，马斯克近期裁撤了旗下xAI的整个多模态团队，该团队约70名成员全部被裁，暂无更多关于此次裁撤原因及后续业务调整的公开说明。 <a href="https://wx.tech-melon.top/c78920">【M177】</a><br>
+<br>
+<b>📈 财经市场</b><br>
+• <b>英伟达股价大跌 市值蒸发超5000亿美元</b>：受黄仁勋辞任消息影响，英伟达11月12日美股开盘一度跌近14%，盘中市值蒸发最高超6000亿美元，股价创去年6月以来新低，较历史高点跌近40%，随后跌幅有所收窄。 <a href="https://weibo.com/detail/5364561150476787">【M027】</a> <a href="https://weibo.com/detail/5364559020818661">【M031】</a> <a href="https://weibo.com/detail/5364570101386038">【M179】</a><br>
+• <b>美国芯片股盘前集体下跌</b>：黄仁勋辞任英伟达CEO后，美国芯片股盘前跌幅扩大，英特尔跌3.7%，迈威尔科技、美光均跌5.2%，ARM跌4.1%，美股上市SK海力士跌5.1%，台积电跌3.5%。 <a href="https://weibo.com/detail/5364556890118323">【M039】</a> <a href="https://weibo.com/detail/5364557805521380">【M143】</a> <a href="https://weibo.com/detail/5364550132305236">【M158】</a><br>
+• <b>Anthropic IPO获约六倍超额认购</b>：AI公司Anthropic首次公开招股已获得约六倍超额认购，市场认购兴趣浓厚，公司及联合创始人计划通过本次IPO募资至多644亿美元，有望成为史上规模最大的股票发行之一。 <a href="https://weibo.com/detail/5364699948649187">【M096】</a><br>
+• <b>币安63.4亿美元被盗资产已全额补足</b>：币安宣布已完成此前安全事件中63.4亿美元被盗数字资产的全额补足，相关损失由平台承担，不转嫁给用户，同时公布最新储备金证明快照，SAFU基金将恢复至约10亿美元。 <a href="https://weibo.com/detail/5364687702852562">【M121】</a> <a href="https://weibo.com/detail/5364684682429825">【M173】</a><br>
+• <b>黄仁勋1.08亿美元未归属股权作废</b>：根据英伟达股权薪酬政策，黄仁勋卸任后将失去约1.08亿美元尚未归属的股权薪酬，该部分约占其1384亿美元净资产的0.08%，其财富几乎全部来自自持英伟达普通股。 <a href="https://weibo.com/detail/5364691070093970">【M111】</a> <a href="https://weibo.com/detail/5364688961144338">【M117】</a> <a href="https://weibo.com/detail/5364692765640665">【M170】</a><br>
+• <b>花旗下调英伟达目标价至225美元</b>：黄仁勋辞任消息公布前夕，花旗分析师连夜将英伟达目标价从285美元下调至225美元，认为黄仁勋在公司战略等方面分量极重，失去他后英伟达发展前景不明朗。 <a href="https://weibo.com/detail/5364556181283706">【M147】</a><br>
+• <b>美股三大指数集体收跌</b>：11月12日美股收盘，三大指数集体收跌，道指涨0.11%，标普500跌0.77%，纳指跌1.51%，英伟达收盘跌超4%，当日科技板块整体受英伟达人事变动消息扰动。 <a href="https://wx.tech-melon.top/d9b05c">【M115】</a><br>
+<br>
+<b>💡 社会民生</b><br>
+• <b>英伟达称财报发布时间维持原定计划</b>：黄仁勋辞任引发人事变动后，英伟达表示仍将按原计划公布2027财年第三季度财务业绩，并召开对应的业绩电话会议，不会因管理层调整推迟财报披露。 <a href="https://weibo.com/detail/5364554248225063">【M150】</a><br>
+• <b>黄仁勋仍持有英伟达超8.7亿股票</b>：英伟达11月12日宣布黄仁勋辞任相关职务的同时披露，黄仁勋卸任后仍持有公司超8.7亿股股票，其个人财富与英伟达股价表现仍高度绑定。 <a href="https://weibo.com/detail/5364687782283295">【M120】</a><br>
+• <b>英伟达临时CEO克雷斯司龄13年</b>：出任临时CEO的科莱特·克雷斯已在英伟达任职13年，此前担任执行副总裁兼CFO，她拥有近25年科技行业财务管理经验，曾在思科、微软任职，正式CEO确定前她将兼任两职。 <a href="https://weibo.com/detail/5364564927448787">【M133】</a> <a href="https://weibo.com/detail/5364557056837167">【M145】</a> <a href="https://weibo.com/detail/5364552997012863">【M153】</a><br>
+<br>
+<b>🎬 文化体育</b><br>
+• <b>音乐家刘欢安葬北京长城脚下 死因系感染性休克</b>：11月12日，刘欢妻子卢璐委托水均益发布公开信，确认刘欢当日安葬于北京长城脚下，死亡医学证明载明死因为感染性休克，水均益、毛阿敏等人协助安葬事宜。 <a href="https://weibo.com/detail/5364558512522322">【M001】</a> <a href="https://weibo.com/detail/5364564646431981">【M023】</a> <a href="https://weibo.com/detail/5364537663688853">【M089】</a><br>
+• <b>刘欢妻子发8000字公开信澄清传闻</b>：11月12日晚，受刘欢妻子卢璐委托，水均益发布约8000字公开信，澄清包括“2009年确诊不死癌症”在内的6项传闻，信中还回顾了刘欢的患病与生活经历。 <a href="https://weibo.com/detail/5364693380369200">【M010】</a> <a href="https://weibo.com/detail/5364585294202973">【M014】</a> <a href="https://weibo.com/detail/5364541762572300">【M168】</a><br>
+• <b>刘欢2012年确诊膀胱癌 抗癌十余年</b>：公开信显示，刘欢2012年录制《中国好声音》期间确诊膀胱原位癌，曾拒绝医生切除膀胱的建议，称“宁死不背尿袋”，去年底发现癌细胞全身转移，与病魔缠斗十余年。 <a href="https://weibo.com/detail/5364541370142863">【M086】</a> <a href="https://weibo.com/detail/5364545239646602">【M166】</a> <a href="https://weibo.com/detail/5364543788155510">【M167】</a><br>
+• <b>刘欢临终前称这辈子还算成功</b>：卢璐在公开信中回忆，刘欢抗癌十余年很少抱怨，始终尽力维持正常工作生活，临终前曾表示自己这一生还算成功“可以了”，治疗期间注重生命尊严。 <a href="https://weibo.com/detail/5364558261652618">【M142】</a> <a href="https://weibo.com/detail/5364549516532160">【M160】</a><br>
+<br>
+<b>🔥 重点关注</b><br>
+
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//mmbiz.qpic.cn/mmbiz_jpg/oGLk9FLlibHfWG0o5yTY0H8kibRCGcSeoPzRupNPla7w3KxgV4xIclEtPtRubVDniau6t7ny4qzou8V6KWC77Qp3zvQMmDIIKwDVD6apic8Yibls/0%3Fwx_fmt%3Djpeg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">一、🔥 <b>黄仁勋辞任英伟达CEO 科莱特·克雷斯任临时CEO</b>：辞任即刻生效，公告未披露原因；现任CFO克雷斯兼任临时CEO，董事会同步启动内外部CEO遴选，哈维·琼斯出任公司首任董事会主席。 <a href="https://wx.tech-melon.top/d176e1">【M003】</a> <a href="https://weibo.com/detail/5364558525106028">【M034】</a> <a href="https://weibo.com/detail/5364550517918182">【M072】</a></div>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx3.sinaimg.cn/orj480/beebff5fly1iizs51y09qj20k00zk3zs.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">二、🚨 <b>音乐家刘欢安葬北京长城脚下 死因系感染性休克</b>：卢璐委托水均益发公开信披露，刘欢<b>2012年</b>确诊膀胱原位癌，去年底癌细胞全身转移，死亡医学证明载明死因为感染性休克，水均益、毛阿敏协助安葬。 <a href="https://weibo.com/detail/5364558512522322">【M001】</a> <a href="https://weibo.com/detail/5364564646431981">【M023】</a> <a href="https://weibo.com/detail/5364537663688853">【M089】</a></div>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx3.sinaimg.cn/wap360/001ZzMwgly1ij08aynpq9j611e1hvb2902.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">三、🎯 <b>SpaceX星舰将第<b>15次</b>试飞 首次挑战双级捕获</b>：本次试飞将先后尝试用发射塔机械臂捕获返回的超级重型助推器、绕地飞行超<b>22小时</b>再入的星舰飞船，若成功将实现人类首枚轨道级火箭完整回收。 <a href="https://weibo.com/detail/5364699199703138">【M009】</a></div>
+</div>
+<div style="display:flex;gap:12px;align-items:flex-start;margin:10px 0;padding:12px;background:var(--card);border:1px solid var(--border);border-radius:10px">
+  <img src="https://weibo.tech-melon.top/proxy/image?url=https%3A//wx4.sinaimg.cn/wap360/002sRokily1iizsg7hh6dj60rs0rswhc02.jpg" style="width:140px;height:95px;object-fit:cover;border-radius:6px;flex-shrink:0" loading="lazy">
+  <div style="flex:1;font-size:14px;line-height:1.6">四、📌 <b>英伟达股价大跌 市值蒸发超<b>5000亿</b>美元</b>：消息公布后英伟达开盘一度跌近<b>14%</b>，盘中最高蒸发市值超<b>6000亿</b>美元，股价创去年<b>6月</b>以来新低，较<b>10月</b>历史高点跌近<b>40%</b>，收盘跌幅收窄至超<b>4%</b>。 <a href="https://weibo.com/detail/5364561150476787">【M027】</a> <a href="https://weibo.com/detail/5364559020818661">【M031】</a> <a href="https://weibo.com/detail/5364570101386038">【M179】</a></div>
+</div><br>
+────────────────────<br>
+<br>
+<b>📊 技术瓜实时监控</b>：<a href="https://weibo.tech-melon.top/">点击访问</a><br>
+<b>💬 交流群</b>：<a href="https://t.me/addlist/gAowuV_p-6g3NDE1">点击加入</a><br>
+<b>🌐 网页版</b>：<a href="https://news.jishugua.top/">点击阅读</a></div>
+</div>
+
+<div class="pagination">
+  <a href="/archive/2026-11-12-evening.html">← 上一篇</a>
+  <a class="archive-btn" href="/archive.html">📚 归档</a>
+  <span class="disabled">下一篇 →</span>
+</div>
+    
+<footer>
+  <p>
+    <a href="https://x.com/0xTechMelon" target="_blank">𝕏 @0xTechMelon</a>
+    &nbsp;·&nbsp;
+    <a href="https://weibo.tech-melon.top/" target="_blank">实时监控</a>
+    &nbsp;·&nbsp;
+    <a href="https://t.me/addlist/gAowuV_p-6g3NDE1" target="_blank">交流群</a>
+    &nbsp;·&nbsp;
+    <a href="/archive.html">往期归档</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/Tech-Melon/news-report-site" target="_blank">GitHub</a>
+  </p>
+  <p style="margin-top:6px">© 2026 技术瓜新闻播报</p>
+</footer>
+
+  </div>
+  <script>
+    function toggleTheme() {
+      var html = document.documentElement;
+      var current = html.getAttribute('data-theme');
+      var next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      document.getElementById('theme-toggle').textContent = next === 'dark' ? '🌙' : '☀️';
+    }
+    // 初始化按钮图标
+    (function() {
+      var t = localStorage.getItem('theme') || 'dark';
+      var btn = document.getElementById('theme-toggle');
+      if (btn) btn.textContent = t === 'dark' ? '🌙' : '☀️';
+    })();
+  </script>
+</body>
+</html>
